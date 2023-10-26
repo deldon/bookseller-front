@@ -1,0 +1,43 @@
+.sherch{
+  margin-top: 60px;
+  padding: 1rem;
+}
+
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+
+  .search-title{
+    margin: 0.5rem;
+    font-family: text;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+
+
+@media screen and (min-width: 684px) {
+  .grid-container {
+
+  
+    grid-template-columns: repeat(8, 1fr);
+ 
+  }
+}
+
+@media all and (orientation: portrait){
+  .grid-container {
+
+  
+    grid-template-columns: repeat(1, 1fr);
+ 
+  }
+}
+
+
+
+  

@@ -1,0 +1,49 @@
+
+.card-deck{
+  margin: 1rem;
+}
+.titles{
+  margin: 1rem
+}
+
+
+
+.card-title{
+  font-size: 1rem;
+  margin-bottom: 0.1rem;}
+
+
+
+.card{
+
+  font-size: 0.5rem;
+  display: grid;
+  grid-template-columns: 150px 300px  180px 50px 200px;
+ 
+}
+
+
+
+/* Styles pour les divs impaires */
+.div-impaire {
+  background-color: #bebebe; /* Couleur de fond pour les divs impaires */
+}
+
+.box{
+  display: flex;
+ 
+}
+
+.box_item{
+  margin-right: 0.1rem;
+  border-right: 1px solid black;
+ text-align: center;
+ width: 50px;
+ 
+ 
+}
+
+main{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}

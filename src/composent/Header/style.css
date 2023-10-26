@@ -1,0 +1,89 @@
+.header {
+  background-color: rgb(255, 255, 255);
+  height: 60px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+a {
+  all: initial;
+  cursor: pointer;
+}
+
+.header-logo {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  font-family: text;
+}
+
+.header-form {
+    all: initial;
+  border-radius: 20px;
+background-color: #f6f6f9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.header-form-select {
+  margin-left: 0.5rem;
+  /* margin: 0.5rem; */
+  border: none;
+  outline: none;
+  
+  font-size: 1rem;
+
+  background-color: #f6f6f9;
+  font-family: text;
+}
+
+
+
+.header-form-input {
+  all: initial;
+  margin-left: 1rem;
+
+  font-size: 1rem;
+  background-color: #f6f6f9;
+  font-family: text
+  ;
+  width: 300px;
+}
+
+.header-form-submit {
+
+  all: initial;
+
+  font-size: 0.8rem;
+
+  background-color: #ff6400;
+  /* border-radius: 0px 20px 20px 0px; */
+  font-family: text;
+  padding: 0.5rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+
+}
+
+.header-form:hover {
+
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  
+  
+  }
+
+.header-shop {
+  margin-right: 1rem;
+  font-family: text;
+}

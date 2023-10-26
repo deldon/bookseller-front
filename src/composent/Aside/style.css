@@ -1,0 +1,41 @@
+.aside{
+    margin-top: 60px;
+    background-color:#f8f8fb;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+  
+}
+
+.aside-author{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.aside-author-cell{
+    width: calc(100% - 50px);
+    padding: 0.2rem 2rem;
+    
+    font-family: text;
+    font-size: 0.9rem;
+}
+
+.aside-author-cell:hover{
+    color:#ff5f00 ;
+}
+
+.aside-top-author{
+    margin: 0.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: text;
+}
+
+
+
+  @media (max-width: 768px) {
+    .aside {
+      display: none;
+      visibility: hidden
+    }
+  }
