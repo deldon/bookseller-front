@@ -2,10 +2,12 @@ import "./style.css";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import LatestArrival from "../LatestArrival/LatestArrival";
 import LastPublication from "../LastPublication/LastPublication";
+import Aside from "../Aside/Aside"
 
-function Home() {
+function Home({ mobile }) {
   return (
     <div className="home">
+     
       <div className="home-header">
         <div className="home-title">Bienvenue chez PressLivre</div>
         <p className="home-description">
@@ -19,8 +21,8 @@ function Home() {
           à des prix abordables.
         </p>
       </div>
+      {mobile ? <Aside mobile={mobile} /> : null}
       <LastPublication />
-     
 
       <div className="home-middel">
         <div className="home-middel-box">
@@ -58,12 +60,14 @@ function Home() {
           </div>
         </div>
         <div className="home-middel-box">
-          <div className="home-middel-box-title">Explorez, Découvrez, Lisez</div>
+          <div className="home-middel-box-title">
+            Explorez, Découvrez, Lisez
+          </div>
           <div className="home-middel-box-description">
             Plongez dans notre univers de livres d'occasion et explorez des
             trésors littéraires qui vous attendent. Faites de chaque achat une
-            découverte, et chaque lecture une aventure. PressLivre est
-            votre destination pour des livres d'occasion de qualité.
+            découverte, et chaque lecture une aventure. PressLivre est votre
+            destination pour des livres d'occasion de qualité.
           </div>
         </div>
       </div>

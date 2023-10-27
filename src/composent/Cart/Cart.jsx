@@ -2,26 +2,11 @@ import "./style.css";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { instance } from "../../request/axios";
+import { Link } from "react-router-dom";
 
+function Cart({ cart, bookDelete }) {
+  const url = instance.defaults.baseURL;
 
-function Cart() {
-
-    const url = instance.defaults.baseURL;
-  const [cart, useCart] = useState([]);
-
-  useEffect(() => {
-    // Cette fonction sera exécutée au démarrage du composant
-    const panier = JSON.parse(localStorage.getItem("cart")) || [];
-    useCart(panier);
-
-    // Placez ici le code que vous souhaitez exécuter au démarrage du composant
-  }, []); // Le tableau de dépendances est vide pour indiquer que le hook ne dépend d'aucune variable
-
-  const reset = () => {
-    localStorage.removeItem("cart");
-    useCart([]);
-  };
-  console.log(cart);
   let total = 0;
 
   for (const b of cart) {
@@ -39,7 +24,7 @@ function Cart() {
     total = total + price;
   }
 
-  const fdp = 3.90
+  const fdp = 3.9;
 
   return (
     <div className="cart">
@@ -61,17 +46,30 @@ function Cart() {
 
                 return (
                   <div className="cart-card">
-                    <img
-                      className="cart-card-thumbnail"
-                      src={`${url}/books/${book.thumbnail}.jpg`}
-                    />
-                    <div className="cart-card-title">
-                      <div className="cart-card-title-title">{book.title}</div>
-                      <div className="cart-card-title-author">{book.name}</div>
-                    </div>
+                    <Link to={`/book/${book.book_id}`}>
+                      <img
+                        className="cart-card-thumbnail"
+                        src={`${url}/books/${book.thumbnail}.jpg`}
+                      />
+                    </Link>
+                    <Link to={`/book/${book.book_id}`}>
+                      <div className="cart-card-title">
+                        <div className="cart-card-title-title">
+                          {book.title}
+                        </div>
+                        <div className="cart-card-title-author">
+                          {book.name}
+                        </div>
+                      </div>
+                    </Link>
 
                     <div className="cart-card-title">{price}€</div>
-                    <div className="cart-card-delet">X</div>
+                    <div
+                      onClick={() => bookDelete(book.book_id)}
+                      className="cart-card-delete"
+                    >
+                      <img src="delete.png" alt="" />
+                    </div>
                   </div>
                 );
               })}
@@ -83,8 +81,7 @@ function Cart() {
         <div className="cart-total">
           <div className="cart-total-text">Total {total}€</div>
           <div className="cart-total-text">Frait de port {fdp}€</div>
-          <div className="cart-total-text">TOTAL {total+fdp}€</div>
-          <div onClick={reset}>vider la panier</div>
+          <div className="cart-total-text">TOTAL {total + fdp}€</div>
         </div>
       </div>
     </div>

@@ -1,43 +1,78 @@
 import "./style.css";
 import { useForm } from "react-hook-form";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
-function Header({ onSubmit }) {
+function Header({ onSubmit, cart }) {
+  const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setLargeurEcran(window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const estMobile = largeurEcran <= 768;
+
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
-  return (
-    <div className="header">
-      <div className="header-logo">
-        <Link to="/">PressLivre</Link>
-      </div>
-   
-        <form className="header-form" onSubmit={handleSubmit(onSubmit)}>
-          <div className="header-form-value">
-            <select className="header-form-select" {...register("type")}>
-              <option value="title">Titre</option>
-              <option value="author">Auteur</option>
-            </select>
+  const loggelLoop = () => {
+    setToggel(!toggel);
+  };
 
-            <input
-              className="header-form-input"
-              placeholder="Rechercher ..."
-              {...register("search", { required: true })}
-            />
-            {/* errors will return when field validation fails  */}
-            {errors.exampleRequired && <span>This field is required</span>}
+  const onSubmits = (data) => {
+    onSubmit(data);
+    reset();
+  };
+
+
+  const Myform = (
+    <form className="header-form" onSubmit={handleSubmit(onSubmits)}>
+      <div className="header-form-value">
+        <input
+          className="header-form-input"
+          placeholder="Rechercher ..."
+          {...register("search", { required: true })}
+        />
+        {/* errors will return when field validation fails  */}
+        {errors.exampleRequired && <span>This field is required</span>}
+      </div>
+
+      <input className="header-form-submit" type="submit" value="" />
+    </form>
+  );
+
+  return (
+    <>
+      <header>
+        <div className="header-top">
+          <div className="header-logo">
+            <Link to="/">PressLivre</Link>
           </div>
 
-          <input className="header-form-submit" type="submit" src="https://api.iconify.design/material-symbols:search-rounded.svg"/>
-        </form>
-  
+          {estMobile ? null : Myform}
 
-      <div className="header-shop"><Link to="/cart">Panier</Link></div>
-    </div>
+          <div className="header-shop">
+            <Link to="/cart">{cart.length}
+            <img src="/cart.png" alt="" />
+            </Link>
+          </div>
+        </div>
+        {!estMobile ? null : <div className="header-sub">{Myform}</div>}
+      </header>
+    </>
   );
 }
 

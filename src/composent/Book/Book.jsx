@@ -3,15 +3,14 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import request from "../../request/query/request";
 import { Link } from "react-router-dom";
-import he from 'he';
+import he from "he";
 import { instance } from "../../request/axios";
+import Spinner from "../Spinner/Spinner";
 
-
-function Book() {
+function Book({addCart}) {
   const { id } = useParams();
 
   const url = instance.defaults.baseURL;
-
 
   const { isLoading, error, data, isPreviousData, refetch } = useQuery(
     ["book", id],
@@ -27,11 +26,9 @@ function Book() {
     }
   );
 
-  if (isLoading) return <>Loading</>;
+  if (isLoading) return <Spinner />;
 
   if (error) return "An error has occurred: " + error.message;
-
-  console.log(data);
 
   let price = null;
   if (data.price < 5) {
@@ -44,29 +41,20 @@ function Book() {
     price = "";
   }
 
-  //let history = useHistory();
-
-  const handleGoBack = () => {
-    console.log("back");
-    window.history.back();
-  };
-
-  const cartHandell = ()=>{
-     // Récupérez le panier depuis Local Storage (s'il existe)
-  const panier = JSON.parse(localStorage.getItem('cart')) || [];
-  
-  // Ajoutez le produit au panier
-  panier.push(data);
-  
-  // Mettez à jour Local Storage avec le nouveau panier
-  localStorage.setItem('cart', JSON.stringify(panier));
-  }
 
 
+const cartHandell = ()=>{
+  addCart(data)
+}
 
   return (
     <div className="book">
-      <div onClick={handleGoBack} className="book-return">
+      <div
+        onClick={() => {
+          window.history.back();
+        }}
+        className="book-return"
+      >
         <img
           src="https://api.iconify.design/ic:sharp-arrow-back-ios.svg"
           alt=""
@@ -130,6 +118,18 @@ function Book() {
                     <td>{data.published_date}</td>
                   </tr>
                 )}
+
+                <tr>
+                  <td>N°</td>
+                  <td>
+                    {data.library.map((book) => (
+                      <>
+                       
+                        #{book.id}RC{book.box} {" "}  
+                      </>
+                    ))}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -138,7 +138,9 @@ function Book() {
           <div className="book-pricecard">
             <div className="book-pricecard-price">{price}€</div>
             <div className="book-pricecard-stock">Stock: {data.stock}</div>
-            <div onClick={cartHandell} className="book-pricecard-achat">Ajouter au panier</div>
+            <div onClick={cartHandell} className="book-pricecard-achat">
+              Ajouter au panier
+            </div>
           </div>
         </div>
       </div>

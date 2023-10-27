@@ -1,16 +1,25 @@
-.header {
+header {
   background-color: rgb(255, 255, 255);
-  height: 60px;
-  position: fixed;
+  
+  position: -webkit-sticky; /* Pour une compatibilité avec Safari */
+  position: sticky;
   left: 0px;
   right: 0px;
   top: 0px;
   border-bottom: 1px solid rgb(216, 216, 216);
 
   display: flex;
+  flex-direction: column;
+
+  z-index: 1000;
+}
+
+.header-top{
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  height: 60px;
+  
 }
 a {
   all: initial;
@@ -28,9 +37,18 @@ a {
   border-radius: 20px;
 background-color: #f6f6f9;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+}
+
+.header-form-value{
+  display: flex;
+}
+
+.headre-loop img{
+  width: 1.5rem;
 }
 
 
@@ -46,6 +64,12 @@ background-color: #f6f6f9;
   font-family: text;
 }
 
+.header-sub{
+ 
+  display: flex;
+  padding: 0.5rem;
+}
+
 
 
 .header-form-input {
@@ -56,12 +80,16 @@ background-color: #f6f6f9;
   background-color: #f6f6f9;
   font-family: text
   ;
-  width: 300px;
+
 }
 
 .header-form-submit {
 
   all: initial;
+  background-image: url('/search.png'); /* Spécifiez l'image */
+  background-size: 24px 24px; /* Ajustez la taille de l'icône */
+  background-repeat: no-repeat;
+  background-position: 10px center; /* Ajustez la position de l'icône */
 
   font-size: 0.8rem;
 
@@ -72,6 +100,9 @@ background-color: #f6f6f9;
   color: white;
   font-weight: bold;
   cursor: pointer;
+  width: 2rem;
+
+  
 
 
 }
@@ -83,7 +114,22 @@ background-color: #f6f6f9;
   
   }
 
-.header-shop {
-  margin-right: 1rem;
+.header-shop{
+  margin-right: 2rem;
   font-family: text;
+}
+.header-shop a{
+ 
+  font-family: title;
+  color: #ff6400;
+}
+
+
+@media screen and (min-width: 1024px) {
+.header-top{
+justify-content: space-between;
+}
+.header-form{
+  width: 40%;
+}
 }

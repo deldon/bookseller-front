@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://192.168.0.100:5000",
+  baseURL: "http://86.237.8.108:5000",
 });
 
 const setToken = (token) => {

@@ -1,9 +1,9 @@
 import { instance } from "../axios";
 
 const request = {
-  sherch: (search,type) => {
+  sherch: (search) => {
     return instance
-      .get("/title?search="+search+"&type="+type)
+      .get("/title?search="+search)
       .then((res) => res.data);
   },
   bookById: (id) => {

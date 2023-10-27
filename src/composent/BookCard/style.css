@@ -3,27 +3,19 @@
  
     border-radius: 20px;
    padding: 0.5rem;
-   width: 100%;
-   
+
+   width: 150px;
     
    
    
   }
 
-.grid-item-bookff{
-    width: 120px;
-    height: 100%;
-    margin: 1rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
-}
 
 .grid-item-book{
 
   display: grid;
+
   grid-template-rows: 200px 3.1rem 1rem ;
 
 }
