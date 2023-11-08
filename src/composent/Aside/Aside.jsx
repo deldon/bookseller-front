@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 import { useQuery } from "react-query";
 import request from "../../request/query/request";
 import { Link } from "react-router-dom";
@@ -32,9 +32,9 @@ function Aside({ mobile }) {
         onClick={() => {
           setToggel(!toggle);
         }}
-        className="aside-top-author"
+        className="aside-top"
       >
-        <div>Top Auteur</div>
+        <div >Top Auteur</div>
 
         {toggle
           ? mobile && (
@@ -56,9 +56,7 @@ function Aside({ mobile }) {
         <div className="aside-author">
           {data.map((author) => (
             <div key={author.id} className="aside-author-cell">
-              <Link to={`/search?type=author&search=${author.name}`}>
-                {author.name}
-              </Link>
+              <Link to={`/search?q=${author.name}`}>{author.name}</Link>
             </div>
           ))}
         </div>

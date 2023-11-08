@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useQuery } from "react-query";
 import request from "../../request/query/request";
 import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
-import "./style.css";
+import "./style.scss";
 import BookCard from "../BookCard/BookCard";
 import Spinner from "../Spinner/Spinner";
 import NoFund from "../noFund/noFund";
@@ -47,7 +47,7 @@ function Sherch() {
   if (error) return "An error has occurred: " + error.message;
 
   if (data.length == 0) {
-    console.log("404");
+ 
   }
 
   const dateDuJour = dayjs(); // Crée une instance Day.js pour la date et l'heure actuelles
@@ -60,10 +60,10 @@ function Sherch() {
       {data.length == 0 && <NoFund/>}
       {data.length > 0 && (
         <>
-          <div className="search-title">{searchValue}</div>
-          <div className="grid-container">
+          <div className="sherch-title">{searchValue}</div>
+          <div className="sherch-grid-container">
             {data.map((book) => (
-              <BookCard book={book} key={book.id} />
+              <BookCard key={book.id} book={book} />
             ))}
           </div>
         </>

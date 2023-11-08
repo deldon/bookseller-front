@@ -1,0 +1,35 @@
+@import "../../var.scss";
+.aside {
+  
+  width: 100%;
+  font-family: text;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: text;
+
+    align-items: center;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  &-author {
+    display: flex;
+    flex-direction: column;
+
+    &-cell {
+      width: calc(100% - 50px);
+      padding: 0.5rem 2rem;
+      a {
+        font-family: text;
+        font-size: 1rem;
+      }
+
+    }
+  }
+}

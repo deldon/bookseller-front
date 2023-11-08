@@ -1,0 +1,144 @@
+@import "../../var.scss";
+.book {
+  &-return {
+    padding-top: 2rem;
+    margin-left: 2rem;
+    font-family: text;
+    cursor: pointer;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+    color: $primary_color;
+    font-weight: bold;
+  }
+
+  &-col {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 80%;
+      }
+    }
+
+    &-info {
+      &-title {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+        font-family: text;
+        font-weight: bold;
+      }
+
+      &-author {
+        a {
+          font-family: text;
+          color: $primary_color;
+          font-weight: bold;
+        }
+
+        margin-bottom: 1rem;
+      }
+
+      &-resumer {
+        &-title {
+          font-size: 1.1rem;
+          font-family: text;
+          font-weight: bold;
+        }
+
+        &-text {
+          font-family: text;
+          margin-bottom: 1rem;
+          font-size: 1rem;
+        }
+      }
+
+      &-car {
+        &-title {
+          font-size: 1.1rem;
+          font-family: text;
+          font-weight: bold;
+        }
+
+        &-table {
+          margin-top: 0.5rem;
+          width: 100%;
+       
+
+          th,
+          td {
+            padding: 5px;
+            border: 1px solid #ddd;
+            font-family: text;
+          }
+
+          tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+          }
+
+          tbody tr:hover {
+            background-color: #cce0ff;
+          }
+        }
+      }
+    }
+
+    &-price {
+      margin-top: 1rem;
+      width: 100%;
+
+      &-pricecard {
+        border: 1px solid #dadada;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-price {
+          font-size: 1.7rem;
+          font-family: title;
+          margin: 2rem;
+        }
+
+        &-stock {
+          font-family: text;
+        }
+
+        &-achat {
+          background-color: $primary_color;
+          padding: 0.7rem;
+          margin-top: 1rem;
+          color: #f2f2f2;
+          font-family: text;
+          font-weight: bold;
+          border-radius: 20px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+            rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          cursor: pointer;
+
+          &:hover {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &-col {
+      display: grid;
+      grid-template-columns: 25% 50% 25%;
+      gap: 0.5rem;
+    }
+
+    &-col-img img {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import '../../var.scss';
+.login-register {
+    // Votre style pour .login-register
+  }
+  
+  .login-register-box {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+    font-family: text;
+  
+    &-header-title {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    &-header-subtitle {
+      margin-bottom: 1rem;
+    }
+  
+    &-input {
+      all: initial;
+      font-size: 1.2rem;
+      font-family: text;
+      border: 1px solid rgb(196, 196, 196);
+      padding: 0.3rem;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+  
+    &-submit {
+      all: initial;
+      background-color: $primary_color;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      font-family: text;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  

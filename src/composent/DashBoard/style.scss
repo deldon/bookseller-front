@@ -1,0 +1,88 @@
+@import "../../var.scss";
+.dashboard {
+  font-family: text;
+  margin: 1rem;
+
+  &-valid {
+    background-color: $Interactive_components_alert;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    &-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-info {
+    &-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &-card {
+      background-color: $Interactive_components;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      &-name {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-orders {
+    &-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+
+      &-card {
+        border: 1px solid rgb(235, 235, 235);
+        margin-bottom: 1rem;
+
+        &-header {
+          background-color: $Interactive_components;
+          padding: 1rem;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        &-main {
+          padding: 1rem;
+
+          &-cardbook {
+            margin-bottom: 0.2rem;
+            display: grid;
+            grid-template-columns: 40% 40% 20%;
+
+            img {
+              width: 80%;
+            }
+          }
+
+          @media screen and (min-width: 1024px) {
+            &-cardbook img {
+              width: 50px;
+            }
+          }
+
+          &-header {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

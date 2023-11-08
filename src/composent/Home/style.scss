@@ -1,0 +1,81 @@
+@import "../../var.scss";
+.home {
+  width: 100%;
+
+  &-header::before {
+    content: "";
+    background-image: url("/back.jpg"); /* URL de votre image de fond */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Assurez-vous que cette superposition est en arrière-plan */
+    filter: brightness(50%);
+  }
+
+  &-header {
+    position: relative;
+    padding: 2rem;
+    /* Autres styles pour votre conteneur principal */
+
+    &-title {
+      color: white;
+      font-family: text;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &-description {
+      color: white;
+      font-family: text;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+  }
+
+  &-middel {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 1rem;
+
+    &-box {
+      margin-top: 1rem;
+   
+      padding: 1rem;
+      background-color: $Interactive_components;
+
+      &-title {
+        font-family: text;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.2rem;
+      
+      }
+
+      &-description {
+        font-family: text;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &-middel {
+      grid-template-columns: 50% 50%;
+    }
+
+    &-header {
+      padding: 3rem;
+
+      &-title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

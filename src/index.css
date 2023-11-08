@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	font-family: text;
 }
 ol, ul {
 	list-style: none;
@@ -46,6 +47,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a {
+	all: initial;
+	cursor: pointer;
+}
 
 @font-face {
     font-family: title;
@@ -56,6 +61,8 @@ table {
     font-family: text;
     src: url(./fonts/Quicksand-Regular.ttf);
   }
+
+
 
 
   

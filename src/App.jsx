@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -11,11 +11,18 @@ import Aside from "./composent/Aside/Aside";
 import Cart from "./composent/Cart/Cart";
 import Footer from "./composent/Footer/Footer";
 import Nofund from "./composent/noFund/noFund";
+import LoginRegister from "./composent/LoginRegister/LoginRegister";
+import Login from "./composent/Login/Login";
+import DashBoard from "./composent/DashBoard/Dashboard";
+import Register from "./composent/Register/Register";
+import OrderValidate from "./composent/OrderValidate/OrderValidate";
 
 function App() {
   const navigate = useNavigate();
   const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
   const [cart, setCart] = useState([]);
+  const [isLogged, setIsLogged] = useState(true);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     function handleResize() {
@@ -51,6 +58,11 @@ function App() {
     }
   };
 
+  const resetCard = () => {
+    localStorage.setItem("cart", JSON.stringify([]));
+    setCart([]);
+  };
+
   const bookDelete = (id) => {
     const nCart = cart.filter((book) => {
       return book.book_id != id;
@@ -62,7 +74,7 @@ function App() {
 
   return (
     <div className="body">
-      <Header onSubmit={onSubmit} cart={cart} />
+      <Header onSubmit={onSubmit} cart={cart} user={user} isLogged={isLogged} />
       <main>
         {mobile ? null : <Aside mobile={mobile} />}
 
@@ -72,12 +84,40 @@ function App() {
           <Route path="/book/:id" element={<Book addCart={addCart} />} />
           <Route
             path="/cart"
-            element={<Cart cart={cart} bookDelete={bookDelete} />}
+            element={
+              <Cart
+                cart={cart}
+                bookDelete={bookDelete}
+                resetCard={resetCard}
+                isLogged={isLogged}
+              />
+            }
           />
-          <Route component={<Nofund/>} />
+
+          <Route
+            path="/dashboard"
+            element={<DashBoard user={user} isLogged={isLogged} />}
+          />
+          <Route path="/login-register" element={<LoginRegister />} />
+          <Route
+            path="/register"
+            element={<Register setIsLogged={setIsLogged} setUser={setUser} />}
+          />
+
+          <Route
+            path="/login"
+            element={<Login setIsLogged={setIsLogged} setUser={setUser} />}
+          />
+
+          <Route
+            path="/valid"
+            element={<OrderValidate />}
+          />
+
+          <Route component={<Nofund />} />
         </Routes>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

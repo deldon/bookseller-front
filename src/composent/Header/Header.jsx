@@ -1,9 +1,9 @@
-import "./style.css";
+import "./style.scss";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
-function Header({ onSubmit, cart }) {
+function Header({ onSubmit, cart, user, isLogged }) {
   const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -17,6 +17,7 @@ function Header({ onSubmit, cart }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
 
   const estMobile = largeurEcran <= 768;
 
@@ -37,12 +38,11 @@ function Header({ onSubmit, cart }) {
     reset();
   };
 
-
   const Myform = (
-    <form className="header-form" onSubmit={handleSubmit(onSubmits)}>
-      <div className="header-form-value">
+    <form className="header-sub-form" onSubmit={handleSubmit(onSubmits)}>
+      <div className="header-sub-form-value">
         <input
-          className="header-form-input"
+          className="header-sub-form-input"
           placeholder="Rechercher ..."
           {...register("search", { required: true })}
         />
@@ -50,7 +50,7 @@ function Header({ onSubmit, cart }) {
         {errors.exampleRequired && <span>This field is required</span>}
       </div>
 
-      <input className="header-form-submit" type="submit" value="" />
+      <input className="header-sub-form-submit" type="submit" value="" />
     </form>
   );
 
@@ -58,15 +58,29 @@ function Header({ onSubmit, cart }) {
     <>
       <header>
         <div className="header-top">
-          <div className="header-logo">
+          <div className="header-top-logo">
             <Link to="/">PressLivre</Link>
           </div>
 
           {estMobile ? null : Myform}
 
-          <div className="header-shop">
-            <Link to="/cart">{cart.length}
-            <img src="/cart.png" alt="" />
+          <div className="header-top-shop">
+            {!isLogged && (
+              <Link to="/dashboard">
+                 <p>{user.lastname}</p>
+                <img src="/user.png" alt="" />
+              </Link>
+            )}
+            {isLogged && (
+              <Link to="/login-register">
+               
+                <img src="/user.png" alt="" />
+              </Link>
+            )}
+
+            <Link to="/cart">
+              {cart.length}
+              <img src="/cart.png" alt="" />
             </Link>
           </div>
         </div>

@@ -26,6 +26,11 @@ const request = {
       .get("/home/lastpublication")
       .then((res) => res.data);
   },
+  myorder: () => {
+    return instance
+      .get("/order/myorder")
+      .then((res) => res.data);
+  }
 };
 
 export default request;

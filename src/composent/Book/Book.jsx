@@ -1,4 +1,4 @@
-import "./style.css";
+import "./style.scss";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
 import request from "../../request/query/request";
@@ -30,16 +30,6 @@ function Book({addCart}) {
 
   if (error) return "An error has occurred: " + error.message;
 
-  let price = null;
-  if (data.price < 5) {
-    price = 1;
-  }
-  if (data.price >= 5 && data.price < 8) {
-    price = 2;
-  }
-  if (data.price >= 8) {
-    price = "";
-  }
 
 
 
@@ -62,31 +52,32 @@ const cartHandell = ()=>{
         />
         <p>Retour</p>
       </div>
-      <div className="book-grid">
+
+      <div className="book-col">
         <div className="book-col-img">
           <img
-            className="book-img"
             src={`${url}/books/${data.thumbnail}.jpg`}
             alt=""
           />
         </div>
+
         <div className="book-col-info">
-          <div className="book-title">{data.title}</div>
-          <div className="book-author">
-            <Link to={`/search?type=author&search=${data.name}`}>
+          <div className="book-col-info-title">{data.title}</div>
+          <div className="book-col-info-author">
+            <Link to={`/search?q=${data.name}`}>
               {data.name}
             </Link>
           </div>
           {data.description && (
-            <div className="book-resumer">
-              <div className="book-resumer-title">Résumé</div>
-              <p className="book-resumer-text">{he.decode(data.description)}</p>
+            <div className="book-col-info-resumer">
+              <div className="book-col-info-resumer-title">Résumé</div>
+              <p className="book-col-info-resumer-text">{he.decode(data.description)}</p>
             </div>
           )}
 
-          <div className="book-info">
-            <div className="book-resumer-title">Caractéristiques</div>
-            <table class="table">
+          <div className="book-col-info-car">
+            <div className="book-col-info-car-title">Caractéristiques</div>
+            <table className="book-col-info-car-table">
               <tbody>
                 {data.editor && (
                   <tr>
@@ -123,10 +114,10 @@ const cartHandell = ()=>{
                   <td>N°</td>
                   <td>
                     {data.library.map((book) => (
-                      <>
+                      <p key={book.id}>
                        
-                        #{book.id}RC{book.box} {" "}  
-                      </>
+                        #{book.id}RC{book.box}
+                      </p>
                     ))}
                   </td>
                 </tr>
@@ -135,10 +126,10 @@ const cartHandell = ()=>{
           </div>
         </div>
         <div className="book-col-price">
-          <div className="book-pricecard">
-            <div className="book-pricecard-price">{price}€</div>
-            <div className="book-pricecard-stock">Stock: {data.stock}</div>
-            <div onClick={cartHandell} className="book-pricecard-achat">
+          <div className="book-col-price-pricecard">
+            <div className="book-col-price-pricecard-price">{data.price}€</div>
+            <div className="book-col-price-pricecard-stock">Stock: {data.stock}</div>
+            <div onClick={cartHandell} className="book-col-price-pricecard-achat">
               Ajouter au panier
             </div>
           </div>

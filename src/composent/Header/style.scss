@@ -1,0 +1,128 @@
+@import "../../var.scss";
+.header {
+ 
+  position: -webkit-sticky; /* Pour une compatibilité avec Safari */
+  position: sticky;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+
+
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+
+    &-logo {
+      a {
+
+        margin-left: 2rem;
+        font-size: 1.5rem;
+        font-family: text;
+
+        cursor: pointer;
+      }
+    }
+
+    &-shop {
+      margin-right: 1rem;
+      font-family: text;
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-right: 1rem;
+        font-family: title;
+        color: $primary_color;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &-sub {
+    padding: 0.5rem;
+
+
+    &-form {
+      all: initial;
+      border-radius: 20px;
+      background-color: $Interactive_components;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+      width: 100%;
+     
+  
+      &-value {
+        display: flex;
+        width: 100%;
+      }
+  
+      &-loop img {
+        width: 1.5rem;
+      }
+  
+      &-select {
+        margin-left: 0.5rem;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        background-color:$Interactive_components;
+        font-family: text;
+      }
+  
+      &-sub {
+        display: flex;
+        padding: 0.5rem;
+      }
+  
+      &-input {
+        all: initial;
+        margin-left: 1rem;
+        font-size: 1rem;
+        background-color: $Interactive_components;
+        font-family: text;
+        width: 100%;
+      }
+  
+      &-submit {
+        all: initial;
+        background-image: url("/search.png");
+        background-size: 24px 24px;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        font-size: 0.8rem;
+        background-color: $primary_color;
+        font-family: text;
+        padding: 0.5rem;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        width: 2rem;
+      }
+  
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+
+      &-form {
+        width: 40%;
+      }
+    }
+  }
+
+  
+
+
+}

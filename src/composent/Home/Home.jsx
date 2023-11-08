@@ -1,28 +1,55 @@
-import "./style.css";
+import "./style.scss";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import LatestArrival from "../LatestArrival/LatestArrival";
 import LastPublication from "../LastPublication/LastPublication";
-import Aside from "../Aside/Aside"
+import Aside from "../Aside/Aside";
 
 function Home({ mobile }) {
   return (
     <div className="home">
-     
       <div className="home-header">
-        <div className="home-title">Bienvenue chez PressLivre</div>
-        <p className="home-description">
+        <div className="home-header-title">Bienvenue chez PressLivre</div>
+        <p className="home-header-description">
           Découvrez un univers de trésors littéraires et d'histoires à portée de
           main.
         </p>
-        <p className="home-description">
-          Chez PressLivre, nous avons une passion pour les livres d'occasion, et
-          nous sommes fiers de vous offrir une sélection soigneusement choisie
-          de volumes anciens et classiques, ainsi que des éditions plus récentes
-          à des prix abordables.
+        <p className="home-header-description">
+          Chez PressLivre, faites votre choix parmi des milliers de livres
+          réservés et venez les chercher à la presse de Lapalud.
         </p>
       </div>
       {mobile ? <Aside mobile={mobile} /> : null}
       <LastPublication />
+
+      <div className="home-middel">
+        <div className="home-middel-box">
+          <div className="home-middel-box-title">Vente locale</div>
+          <div className="home-middel-box-description">
+            Réservez vos livres, nous les préparons sous 48 heures.{" "}
+            <p>
+              Un email de confirmation vous indiquera quand venir chercher vos
+              livres à la Maison de la Presse de Lapalud (84840).
+            </p>
+          </div>
+        </div>
+        <div className="home-middel-box">
+          <div className="home-middel-box-title">Notre démarche</div>
+          <div className="home-middel-box-description">
+            <p>
+              De nombreux ouvrages restent non-repris par les plateformes
+              conventionnelles, telles que (Momox ou Amazon), principalement en
+              raison de leur rentabilité insuffisante, ce qui les condamne
+              inexorablement à l'oubli.
+            </p>
+            <p>
+              Chez PressLivre, nous avons pris l'initiative de vous offrir ces
+              ouvrages pour leur donner une seconde chance, tout en préservant
+              la culture littéraire.
+            </p>
+          </div>
+        </div>
+      </div>
+      <LatestArrival />
 
       <div className="home-middel">
         <div className="home-middel-box">
@@ -34,29 +61,6 @@ function Home({ mobile }) {
             fiction, un passionné d'histoire, un étudiant en quête de manuels
             abordables ou un collectionneur de raretés littéraires, vous
             trouverez certainement des trésors parmi nos rayons virtuels.
-          </div>
-        </div>
-        <div className="home-middel-box">
-          <div className="home-middel-box-title">Qualité Garantie</div>
-          <div className="home-middel-box-description">
-            Chez PressLivre, la qualité est notre priorité. Chacun de nos livres
-            d'occasion est soigneusement inspecté pour s'assurer de son état, de
-            sa propreté et de son authenticité. Vous pouvez acheter en toute
-            confiance, en sachant que vous recevrez des livres en excellent
-            état, prêts à enrichir votre bibliothèque.
-          </div>
-        </div>
-      </div>
-      <LatestArrival />
-
-      <div className="home-middel">
-        <div className="home-middel-box">
-          <div className="home-middel-box-title">Service Exceptionnel</div>
-          <div className="home-middel-box-description">
-            Nous sommes déterminés à offrir une expérience de magasinage
-            exceptionnelle. Notre équipe dévouée est à votre disposition pour
-            répondre à vos questions, vous conseiller dans vos choix de lecture
-            et vous assister tout au long de votre parcours sur notre site.
           </div>
         </div>
         <div className="home-middel-box">
