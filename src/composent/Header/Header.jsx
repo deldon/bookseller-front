@@ -59,7 +59,7 @@ function Header({ onSubmit, cart, user, isLogged }) {
       <header>
         <div className="header-top">
           <div className="header-top-logo">
-            <Link to="/">PressLivre</Link>
+            <Link to="/">LireEncore.fr</Link>
           </div>
 
           {estMobile ? null : Myform}

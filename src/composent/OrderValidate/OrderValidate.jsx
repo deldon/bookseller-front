@@ -17,12 +17,13 @@ function OrderValidate() {
         vos livres à
       </p>
       <p className="order-validate-info">
-        la Maison de la Presse de Lapalud (84840).
+        la Maison de la Presse de Lapalud .
       </p>
+      <p>46 cours de platanes (84840).</p>
       <p>
         Le paiement s'effectue en magasin lors du retrait de votre commande.
       </p>
-      <Link to="/dashboard">Voir mes commandes !</Link>
+      <Link to="/dashboard">Voir mes commandes </Link>
     </dir>
   );
 }

@@ -81,7 +81,7 @@ const cartHandell = ()=>{
               <tbody>
                 {data.editor && (
                   <tr>
-                    <td>Editeur</td>
+                    <td>Éditeur</td>
                     <td>{data.editor}</td>
                   </tr>
                 )}
@@ -99,7 +99,7 @@ const cartHandell = ()=>{
                 )}
                 {data.isbn && (
                   <tr>
-                    <td>isbn</td>
+                    <td>Isbn</td>
                     <td>{data.isbn}</td>
                   </tr>
                 )}

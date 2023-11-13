@@ -42,7 +42,7 @@ function DashBoard({ user, isLogged }) {
       {!user.email_valid && (
         <div className="dashboard-valid">
           <div className="dashboard-valid-title">
-            Votre compte n'a pas été validé !
+            Attention, il vous reste encore une étape !
           </div>
           <div className="dashboard-valid-text">
             <p>
@@ -61,7 +61,7 @@ function DashBoard({ user, isLogged }) {
         <div className="dashboard-info-card">
           <div className="dashboard-info-card-left">
             <div className="dashboard-info-card-name">
-              Bonjour {user.lastname} {user.firstname}
+              Bonjour {user.firstname} {user.lastname} 
             </div>
             <div className="dashboard-info-card-email">{user.email}</div>
           </div>

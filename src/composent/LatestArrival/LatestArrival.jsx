@@ -31,7 +31,7 @@ function LatestArrival() {
 
   return (
     <div className="latest-arrival">
-      <div className="latest-arrival-title">Nouveau sur PressLivre</div>
+      <div className="latest-arrival-title">Nouveau sur LireEncore.fr</div>
 
       <Swiper
         breakpoints={{

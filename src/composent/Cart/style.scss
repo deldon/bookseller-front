@@ -17,18 +17,21 @@
     align-items: center;
     background-color: $Interactive_components;
     margin-bottom: 1rem;
+    font-family: text;
   
     &-thumbnail {
       height: 100px;
       width: 70px;
     }
   
-    &-title-title {
+    &-title {
       font-weight: bold;
+      font-family: text;
     }
   
-    &-title-author {
+    &-author {
       font-size: 0.9rem;
+      font-family: text;
     }
   
     &-delete {
@@ -60,6 +63,16 @@
     font-weight: bold;
     color: white;
     cursor: pointer;
+
+    
+  }
+
+  .cart-submit-text{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: -1rem;
+    text-align: center;
   }
   
   .cart-col-total {

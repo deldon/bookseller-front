@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "http://86.237.8.108:5000",
+  baseURL: "https://lireencore.fr/api",
+ // baseURL: "http://localhost:5000",
 });
 
 const setToken = (token) => {

@@ -113,8 +113,8 @@ function Register({ setIsLogged, setUser }) {
                   message: 'Le mot de passe doit contenir au moins 8 caractères',
                 },
                 pattern: {
-                  value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/,
-                  message: 'Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule et un caractère spécial (@#$%^&+=).',
+                  value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,}$/,
+                  message: 'Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule et un caractère spécial.',
                 }, }}
                 render={({ field }) => (
                   <input

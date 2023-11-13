@@ -39,7 +39,6 @@ function Cart({ cart, bookDelete, resetCard, isLogged }) {
       };
 
       mutation.mutate(obj);
-    
     } else {
       navigate("/login-register");
     }
@@ -84,11 +83,11 @@ function Cart({ cart, bookDelete, resetCard, isLogged }) {
             </div>
             <div className="cart-col-total">
               <div className="cart-total">
-              <div className="cart-total-total">TOTAL {total}€</div>
+                <div className="cart-total-total">TOTAL {total}€</div>
                 <div className="cart-total-info">
                   <p>
                     Pour valider vos achats, veuillez cliquer sur le bouton
-                    Réserver ! ci-dessous.
+                    "Réserver" ci-dessous.
                   </p>
                   <p>
                     Nous nous ferons un plaisir de préparer votre commande dans
@@ -98,17 +97,33 @@ function Cart({ cart, bookDelete, resetCard, isLogged }) {
                     Vous recevrez un e-mail de confirmation vous invitant à
                     venir chercher vos livres à
                   </p>
-                  <p className="cart-bold">la Maison de la Presse de Lapalud (84840).</p>
+                  <p className="cart-bold">
+                    la Maison de la Presse de Lapalud (84840).
+                  </p>
                   <p>
                     Le paiement s'effectue en magasin lors du retrait de votre
                     commande.
                   </p>
                 </div>
-                
               </div>
-              <div className="cart-submit" onClick={submit}>
-              Réserver !
-              </div>
+              {!isLogged && (
+                <div className="cart-submit" onClick={submit}>
+                  Réserver
+                </div>
+              )}
+              {isLogged && (
+                <>
+                  <p className="cart-submit-text"> Pour réserver un livre, vous devez être connecté.</p>{" "}
+                  <div
+                    className="cart-submit"
+                    onClick={() => {
+                      navigate("/login-register");
+                    }}
+                  >
+                    Connectez-vous / créez un compte.
+                  </div>
+                </>
+              )}
             </div>
           </>
         )}

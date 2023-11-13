@@ -8,14 +8,14 @@ function Home({ mobile }) {
   return (
     <div className="home">
       <div className="home-header">
-        <div className="home-header-title">Bienvenue chez PressLivre</div>
+        <div className="home-header-title">Bienvenue chez LireEncore.fr</div>
         <p className="home-header-description">
           Découvrez un univers de trésors littéraires et d'histoires à portée de
           main.
         </p>
         <p className="home-header-description">
-          Chez PressLivre, faites votre choix parmi des milliers de livres
-          réservés et venez les chercher à la presse de Lapalud.
+          Chez LireEncore.fr, faites votre choix parmi des milliers de livres,
+          réservez les, et venez les chercher à la presse de Lapalud.
         </p>
       </div>
       {mobile ? <Aside mobile={mobile} /> : null}
@@ -25,10 +25,10 @@ function Home({ mobile }) {
         <div className="home-middel-box">
           <div className="home-middel-box-title">Vente locale</div>
           <div className="home-middel-box-description">
-            Réservez vos livres, nous les préparons sous 48 heures.{" "}
+            Réservez vos livres, nous les préparons sous 48 heures.
             <p>
-              Un email de confirmation vous indiquera quand venir chercher vos
-              livres à la Maison de la Presse de Lapalud (84840).
+              Un e-mail de confirmation vous indiquera quand venir les chercher
+              à la Maison de la Presse de Lapalud (84840).
             </p>
           </div>
         </div>
@@ -36,15 +36,15 @@ function Home({ mobile }) {
           <div className="home-middel-box-title">Notre démarche</div>
           <div className="home-middel-box-description">
             <p>
-              De nombreux ouvrages restent non-repris par les plateformes
-              conventionnelles, telles que (Momox ou Amazon), principalement en
-              raison de leur rentabilité insuffisante, ce qui les condamne
-              inexorablement à l'oubli.
+              Les plateformes conventionnelles, telles que Momox ou Amazon, ne
+              reprennent pas tous les ouvrages, principalement en raison de leur
+              rentabilité insuffisante, ce qui les condamne inexorablement à
+              l'oubli.
             </p>
             <p>
-              Chez PressLivre, nous avons pris l'initiative de vous offrir ces
-              ouvrages pour leur donner une seconde chance, tout en préservant
-              la culture littéraire.
+              Chez LireEncore.fr, nous avons pris l'initiative de vous proposer
+              ces ouvrages pour leur donner une seconde chance, tout en
+              préservant la culture littéraire.
             </p>
           </div>
         </div>
@@ -68,10 +68,14 @@ function Home({ mobile }) {
             Explorez, Découvrez, Lisez
           </div>
           <div className="home-middel-box-description">
-            Plongez dans notre univers de livres d'occasion et explorez des
-            trésors littéraires qui vous attendent. Faites de chaque achat une
-            découverte, et chaque lecture une aventure. PressLivre est votre
-            destination pour des livres d'occasion de qualité.
+            <p>
+              LireEncore.fr est votre destination pour des livres d'occasion de
+              qualité.
+            </p>
+            <p>
+              Faites de chaque achat une découverte, et de chaque lecture une
+              aventure.
+            </p>
           </div>
         </div>
       </div>
@@ -80,3 +84,4 @@ function Home({ mobile }) {
 }
 
 export default Home;
+//scp -r /home/llio/perso/bookseller-front/dist root@	212.227.27.131:/var/www/html

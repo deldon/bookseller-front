@@ -10,7 +10,7 @@ import { useState } from "react";
 
 function loginRegister({ setIsLogged, setUser }) {
 
-  const [infoError,setInfoError] = useState(null)
+
   const location = useLocation();
   const navigate = useNavigate();
 
