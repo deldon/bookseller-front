@@ -6,8 +6,11 @@ import { instance } from "../../request/axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import dayjs from "dayjs";
 
-function DashBoard({ user, isLogged }) {
+import Valid from "../Valid/Valide";
+
+function DashBoard({ user, isLogged, setUser }) {
   const url = instance.defaults.baseURL;
+  
 
   const navigate = useNavigate();
   if (isLogged) {
@@ -39,34 +42,18 @@ function DashBoard({ user, isLogged }) {
 
   return (
     <div className="dashboard">
-      {!user.email_valid && (
-        <div className="dashboard-valid">
-          <div className="dashboard-valid-title">
-            Attention, il vous reste encore une étape !
-          </div>
-          <div className="dashboard-valid-text">
-            <p>
-              Veuillez valider l'e-mail de votre compte en cliquant sur le lien
-              que nous vous avons envoyé.
-            </p>
-            <p>
-              Les utilisateurs validés seront prioritaires pour la préparation
-              de vos livres.
-            </p>
-          </div>
-        </div>
-      )}
+        <Valid user={user} setUser={setUser} /> 
       <div className="dashboard-info">
         <div className="dashboard-info-title">Mes infos</div>
         <div className="dashboard-info-card">
           <div className="dashboard-info-card-left">
             <div className="dashboard-info-card-name">
-              Bonjour {user.firstname} {user.lastname} 
+              Bonjour {user.firstname} {user.lastname}
             </div>
             <div className="dashboard-info-card-email">{user.email}</div>
           </div>
           <div className="dashboard-info-card-edit">
-            <img src="/edit.png" alt="" />
+            {/* <img src="/edit.png" alt="" /> */}
           </div>
         </div>
       </div>

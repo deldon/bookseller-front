@@ -1,8 +1,21 @@
-# React + Vite
+# Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pour envoyer le projet, exécutez la commande suivante :
 
-Currently, two official plugins are available:
+```bash
+npm run build
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pour téléverser le projet sur le serveur, utilisez la commande suivante :
+
+```bash
+scp -r /home/llio/perso/bookseller-front/dist root@	212.227.27.131:/var/www/html
+```
+
+**À faire :**
+
+- [ ] Créer un client d'envoi (upload).
+- [ ] Corriger la suppression de toutes les cartes pour l'identifiant du livre.
+
+
+

@@ -96,7 +96,7 @@ function App() {
 
           <Route
             path="/dashboard"
-            element={<DashBoard user={user} isLogged={isLogged} />}
+            element={<DashBoard user={user} isLogged={isLogged} setUser={setUser} />}
           />
           <Route path="/login-register" element={<LoginRegister />} />
           <Route
@@ -109,10 +109,7 @@ function App() {
             element={<Login setIsLogged={setIsLogged} setUser={setUser} />}
           />
 
-          <Route
-            path="/valid"
-            element={<OrderValidate />}
-          />
+          <Route path="/valid" element={<OrderValidate />} />
 
           <Route component={<Nofund />} />
         </Routes>

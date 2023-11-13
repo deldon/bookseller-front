@@ -16,6 +16,9 @@ const request = {
   addOrder: (data) => {
     return instance.post("/order/add", data);
   },
+  ValidMail: (data) => {
+    return instance.post("/client/validemail/", data);
+  },
 
 };
 

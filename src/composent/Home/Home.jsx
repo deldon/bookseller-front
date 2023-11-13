@@ -84,4 +84,4 @@ function Home({ mobile }) {
 }
 
 export default Home;
-//scp -r /home/llio/perso/bookseller-front/dist root@	212.227.27.131:/var/www/html
+
