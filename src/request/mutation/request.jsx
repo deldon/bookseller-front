@@ -11,14 +11,15 @@ const request = {
   addClient: (data) => {
     return instance.post("/client/add", data);
   },
+  ValidMail: (data) => {
+    return instance.post("/client/validemail/", data);
+  },
 
   //Order
   addOrder: (data) => {
     return instance.post("/order/add", data);
   },
-  ValidMail: (data) => {
-    return instance.post("/client/validemail/", data);
-  },
+
 
 };
 
