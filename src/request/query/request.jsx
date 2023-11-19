@@ -17,6 +17,11 @@ const request = {
   LastPublication: () => {
     return instance.get("/books/lastpublication").then((res) => res.data);
   },
+  AllBooks: (page) => {
+    return instance
+      .get("/books?pages=" + page)
+      .then((res) => res.data);
+  },
 
   //order
 

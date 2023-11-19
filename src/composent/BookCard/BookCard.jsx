@@ -14,7 +14,7 @@ function BookCard({ book }) {
         <div className="grid-item-thumbnail">
           <Link to={`/book/${book.book_id}`}>
             <img
-              src={`${url}/books/${book.thumbnail}.jpg`}
+              src={book.thumbnail}
               alt=""
             />
           </Link>

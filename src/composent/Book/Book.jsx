@@ -56,7 +56,7 @@ const cartHandell = ()=>{
       <div className="book-col">
         <div className="book-col-img">
           <img
-            src={`${url}/books/${data.thumbnail}.jpg`}
+            src={data.thumbnail}
             alt=""
           />
         </div>

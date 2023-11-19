@@ -1,6 +1,5 @@
 @import "../../var.scss";
 .aside {
-  
   width: 100%;
   font-family: text;
   &-top {
@@ -17,19 +16,16 @@
       width: 30px;
     }
   }
+}
 
-  &-author {
-    display: flex;
-    flex-direction: column;
-
-    &-cell {
-      width: calc(100% - 50px);
-      padding: 0.5rem 2rem;
+nav {
+  ul {
+    li {
+      margin-left: 1rem;
       a {
+        font-weight: bold;
         font-family: text;
-        font-size: 1rem;
       }
-
     }
   }
 }

@@ -1,0 +1,23 @@
+@import "../../var.scss";
+.top_authors {
+  &-grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 10px;
+
+    a {
+      color: rgb(0, 0, 0);
+      font-family: text;
+      font-weight: bold;
+      background-color: $Interactive_components;
+
+      padding: 0.5rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 150px);
+      grid-gap: 10px;
+    }
+  }
+}

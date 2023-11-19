@@ -3,6 +3,8 @@ import "./App.scss";
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+import useScrollToTop from "./hooks/useScrollToTop";
+
 import Sherch from "./composent/Sherch/Sherch";
 import Header from "./composent/Header/Header";
 import Home from "./composent/Home/Home";
@@ -16,9 +18,12 @@ import Login from "./composent/Login/Login";
 import DashBoard from "./composent/DashBoard/Dashboard";
 import Register from "./composent/Register/Register";
 import OrderValidate from "./composent/OrderValidate/OrderValidate";
+import AllBook from "./composent/AllBook/AllBook";
+import TopAuthors from "./composent/TopAuthors/TopAuthors";
 
 function App() {
   const navigate = useNavigate();
+  useScrollToTop();
   const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
   const [cart, setCart] = useState([]);
   const [isLogged, setIsLogged] = useState(true);
@@ -80,6 +85,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home mobile={mobile} />} />
+          <Route path="/authors" element={<TopAuthors />} />
           <Route path="/search" element={<Sherch />} />
           <Route path="/book/:id" element={<Book addCart={addCart} />} />
           <Route
@@ -93,24 +99,23 @@ function App() {
               />
             }
           />
-
           <Route
             path="/dashboard"
-            element={<DashBoard user={user} isLogged={isLogged} setUser={setUser} />}
+            element={
+              <DashBoard user={user} isLogged={isLogged} setUser={setUser} />
+            }
           />
+          <Route path="/books/:page" element={<AllBook />} />
           <Route path="/login-register" element={<LoginRegister />} />
           <Route
             path="/register"
             element={<Register setIsLogged={setIsLogged} setUser={setUser} />}
           />
-
           <Route
             path="/login"
             element={<Login setIsLogged={setIsLogged} setUser={setUser} />}
           />
-
           <Route path="/valid" element={<OrderValidate />} />
-
           <Route component={<Nofund />} />
         </Routes>
       </main>

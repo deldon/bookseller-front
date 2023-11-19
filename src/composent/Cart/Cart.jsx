@@ -56,7 +56,7 @@ function Cart({ cart, bookDelete, resetCard, isLogged }) {
                     <Link to={`/book/${book.book_id}`}>
                       <img
                         className="cart-card-thumbnail"
-                        src={`${url}/books/${book.thumbnail}.jpg`}
+                        src={book.thumbnail} 
                       />
                     </Link>
                     <Link to={`/book/${book.book_id}`}>

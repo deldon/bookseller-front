@@ -1,13 +1,11 @@
-@import './var.scss';
+@import "./var.scss";
 @media screen and (min-width: 1024px) {
-    main{
-     display: grid;
-     grid-template-columns: 15% 85%;
-      
-    }
+  main {
+    display: grid;
+    grid-template-columns: 10% 90%;
   }
+}
 
-
-  body{
-    background-color: $backgrounds;
-  }
+body {
+  background-color: $backgrounds;
+}

@@ -8,24 +8,6 @@ import Spinner from "../Spinner/Spinner";
 function Aside({ mobile }) {
   const [toggle, setToggel] = useState(false);
 
-  const { isLoading, error, data, isPreviousData, refetch } = useQuery(
-    ["topAuthor"],
-    async () => {
-      const data = await request.topAuthors();
-      return data;
-    },
-    {
-      refetchOnWindowFocus: true,
-      staleTime: 0,
-      cacheTime: 0,
-      refetchInterval: 0,
-    }
-  );
-
-  if (isLoading) return <Spinner />;
-
-  if (error) return "An error has occurred: " + error.message;
-
   return (
     <aside>
       <div
@@ -34,7 +16,7 @@ function Aside({ mobile }) {
         }}
         className="aside-top"
       >
-        <div >Top Auteur</div>
+        <div>Menu</div>
 
         {toggle
           ? mobile && (
@@ -53,13 +35,16 @@ function Aside({ mobile }) {
       </div>
 
       {(!mobile || toggle) && (
-        <div className="aside-author">
-          {data.map((author) => (
-            <div key={author.id} className="aside-author-cell">
-              <Link to={`/search?q=${author.name}`}>{author.name}</Link>
-            </div>
-          ))}
-        </div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/books/0">Tous les livres</Link>
+            </li>
+            <li>
+              <Link to="/authors">Tous les auteurs</Link>
+            </li>
+          </ul>
+        </nav>
       )}
     </aside>
   );
