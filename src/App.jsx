@@ -105,7 +105,7 @@ function App() {
               <DashBoard user={user} isLogged={isLogged} setUser={setUser} />
             }
           />
-          <Route path="/books/:page" element={<AllBook />} />
+          <Route path="/livres/:page" element={<AllBook />} />
           <Route path="/login-register" element={<LoginRegister />} />
           <Route
             path="/register"

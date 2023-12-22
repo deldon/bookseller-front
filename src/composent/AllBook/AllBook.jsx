@@ -39,10 +39,10 @@ function AllBooks() {
 
         <div className="all_books-button">
           {page != 0 && (
-            <Link to={`/books/${Number(page) - 1}`}>Précédent</Link>
+            <Link to={`/livres/${Number(page) - 1}`}>Précédent</Link>
           )}
 
-          <Link to={`/books/${Number(page) + 1}`}>Suivant</Link>
+          <Link to={`/livres/${Number(page) + 1}`}>Suivant</Link>
         </div>
       </div>
     </>

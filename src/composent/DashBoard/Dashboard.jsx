@@ -75,7 +75,7 @@ function DashBoard({ user, isLogged, setUser }) {
                 </div>
                 {order.book.map((book) => (
                   <div className="dashboard-orders-wrapper-card-main-cardbook">
-                    <img src={`${url}/books/${book.thumbnail}.jpg`} alt="" />
+                    <img src={book.thumbnail} alt="" />
                     <div>
                       {" "}
                       <p>{book.title}</p> <p>{book.author}</p>

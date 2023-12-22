@@ -2,9 +2,14 @@ import { instance } from "../axios";
 
 const request = {
   //books
+
+  AllBooks: (page) => {
+    return instance.get("/books/all?pages=" + page).then((res) => res.data);
+  },
+
   sherch: (search) => {
     return instance
-      .get("/books/title?search=" + search)
+      .get("/books/search?q=" + search)
       .then((res) => res.data);
   },
   bookById: (id) => {
@@ -17,11 +22,7 @@ const request = {
   LastPublication: () => {
     return instance.get("/books/lastpublication").then((res) => res.data);
   },
-  AllBooks: (page) => {
-    return instance
-      .get("/books?pages=" + page)
-      .then((res) => res.data);
-  },
+
 
   //order
 

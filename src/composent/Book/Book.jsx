@@ -10,7 +10,6 @@ import Spinner from "../Spinner/Spinner";
 function Book({addCart}) {
   const { id } = useParams();
 
-  const url = instance.defaults.baseURL;
 
   const { isLoading, error, data, isPreviousData, refetch } = useQuery(
     ["book", id],

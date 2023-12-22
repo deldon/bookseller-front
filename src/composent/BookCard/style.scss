@@ -40,10 +40,16 @@
   overflow: hidden;
 }
 
-.grid-item-author a{
-font-family: text;
-  font-size: 0.9rem;
-}
+.grid-item-author{
+  white-space: nowrap; /* Empêche le texte de retourner à la ligne */
+  overflow: hidden;    /* Masque le texte dépassant de la boîte */
+  text-overflow: ellipsis; /* Ajoute des points de suspension à la fin du texte coupé */
+  a{
+    font-family: text;
+      font-size: 0.9rem;
+      
+    }
+} 
 
 .grid-item-price {
   margin-top: 0.5rem;

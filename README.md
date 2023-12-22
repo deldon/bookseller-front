@@ -7,9 +7,10 @@ npm run build
 ```
 
 Pour téléverser le projet sur le serveur, utilisez la commande suivante :
-
+VALIDER
 ```bash
-scp -r /home/llio/perso/bookseller-front/dist root@	212.227.27.131:/var/www/html
+scp -r /home/llio/perso/bookseller-front/dist/* root@212.227.27.131:/var/www/html
+
 ```
 
 **À faire :**

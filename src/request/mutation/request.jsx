@@ -5,8 +5,8 @@ const request = {
   isClient: (email) => {
     return instance.post("/client/isclient", email);
   },
-  login: (newTodo) => {
-    return instance.post("/client/login/", newTodo);
+  login: (data) => {
+    return instance.post("/client/login/", data);
   },
   addClient: (data) => {
     return instance.post("/client/add", data);

@@ -38,7 +38,7 @@ function Aside({ mobile }) {
         <nav>
           <ul>
             <li>
-              <Link to="/books/0">Tous les livres</Link>
+              <Link to="/livres/0">Tous les livres</Link>
             </li>
             <li>
               <Link to="/authors">Tous les auteurs</Link>
