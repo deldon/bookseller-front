@@ -1,5 +1,4 @@
 import "./style.scss";
-import { BrowserRouter, Route, Link } from "react-router-dom";
 import LatestArrival from "../LatestArrival/LatestArrival";
 import LastPublication from "../LastPublication/LastPublication";
 import Aside from "../Aside/Aside";

@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
 
+  window.scrollTo(0, 0);
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    console.log('top');
+    
+  }, []);
 
   return null; // Ce composant ne rend rien
 };

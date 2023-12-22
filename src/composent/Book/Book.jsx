@@ -8,7 +8,7 @@ import { instance } from "../../request/axios";
 import Spinner from "../Spinner/Spinner";
 
 function Book({addCart}) {
-  const { id } = useParams();
+ const { id } = useParams();
 
 
   const { isLoading, error, data, isPreviousData, refetch } = useQuery(

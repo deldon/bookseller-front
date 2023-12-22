@@ -23,13 +23,16 @@ import TopAuthors from "./composent/TopAuthors/TopAuthors";
 
 function App() {
   const navigate = useNavigate();
-  useScrollToTop();
+ // useScrollToTop();
+
   const [largeurEcran, setLargeurEcran] = useState(window.innerWidth);
   const [cart, setCart] = useState([]);
   const [isLogged, setIsLogged] = useState(true);
   const [user, setUser] = useState({});
 
   useEffect(() => {
+
+
     function handleResize() {
       setLargeurEcran(window.innerWidth);
     }
